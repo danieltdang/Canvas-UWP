@@ -1,0 +1,45 @@
+﻿<Page
+    x:Class="UWP.LMS.Pages.CourseDetailPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:UWP.LMS"
+    xmlns:models="using:NetStandard.LMS.Models"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="11.7*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button Grid.Column="0" Content="Back" FontSize="36" VerticalAlignment="Stretch" HorizontalAlignment="Stretch" Click="Back_Click"/>
+            <Viewbox Grid.Column="1" Margin="10">
+                <TextBlock x:Name="ViewType" FontSize="36" Text="View" TextAlignment="Center" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+            </Viewbox>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="0.2*" MaxWidth="200"/>
+                <ColumnDefinition Width="0.5*"/>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0" Margin="0,5,5,0">
+                <ListBox SelectionChanged="Option_Changed" SelectedIndex="{Binding Path=selectedOption, Mode=TwoWay}">
+                    <ListBoxItem FontSize="24" Content="Announcements"/>
+                    <ListBoxItem FontSize="24" Content="Modules"/>
+                    <ListBoxItem FontSize="24" Content="Assignments"/>
+                    <ListBoxItem FontSize="24" Content="Roster"/>
+                </ListBox>
+            </Grid>
+            <Frame Grid.Column="1" x:Name="CourseDetailFrame"/>
+        </Grid>
+    </Grid>
+</Page>
