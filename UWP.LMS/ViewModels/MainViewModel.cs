@@ -31,7 +31,7 @@ namespace Canvas.UWP.ViewModels
                 personService.Add(admin);
 
                 // Testing Objects
-                Instructor instructor = new Instructor
+                /*Instructor instructor = new Instructor
                 {
                     Name = "Professor Mills",
                 };
@@ -179,7 +179,7 @@ namespace Canvas.UWP.ViewModels
                 course1.Add(instructor);
                 course2.Add(student);
                 course3.Add(student);
-                course4.Add(student);
+                course4.Add(student);*/
             }
         }
 
